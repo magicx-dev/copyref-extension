@@ -1,6 +1,6 @@
 ext:
-  name: 'CopyRef: Copy Reference'
-  desc: 'Copy Markdown Format Web Addresses (as Reference).'
+  name: 'CopyRef: Copy Markdown Link'
+  desc: 'CopyRef is an open-source browser extension tool for copying the URL of the current tab (Markdown).'
 popup:
   shortName: 'CopyRef'
   copy_successful: 'Copy Successful'

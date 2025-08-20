@@ -1,6 +1,6 @@
 ext:
-  name: 'CopyRef: 复制引用'
-  desc: '复制 Markdown 格式网址（作为引用）。'
+  name: 'CopyRef: 复制 Markdown 链接'
+  desc: 'CopyRef 是一款开源的浏览器扩展工具，用于复制当前标签页的网址（Markdown）。'
 popup:
   shortName: 'CopyRef'
   copy_successful: '复制成功'

@@ -1,6 +1,6 @@
 {
   "name": "CopyRef",
-  "description": "Copy Markdown Format Web Addresses (as Reference).",
+  "description": "Copy Markdown Link",
   "private": true,
   "version": "0.0.1",
   "type": "module",

@@ -26,5 +26,8 @@ export default defineConfig({
         "description": "__MSG_command_copy_desc__",
       }
     },
+    "permissions": [
+      'activeTab'
+    ]
   }
 });

@@ -9,4 +9,16 @@ export default defineConfig({
   vite: () => ({
     plugins: [tailwindcss()],
   }),
+  manifest: {
+    "commands": {
+      "copy": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+C",
+          "mac": "MacCtrl+Shift+C",
+          "windows": "Ctrl+Shift+C"
+        },
+        "description": "Copy Markdown Format Web Addresses."
+      }
+    },
+  }
 });

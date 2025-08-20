@@ -1,0 +1,10 @@
+ext:
+  name: 'CopyRef: 复制引用'
+  desc: '复制 Markdown 格式网址（作为引用）。'
+popup:
+  shortName: 'CopyRef'
+  copy_successful: '复制成功'
+  copied_to_clipboard: '已复制到剪贴板'
+command:
+  copy: 
+    desc: '复制'

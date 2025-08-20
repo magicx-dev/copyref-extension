@@ -1,0 +1,10 @@
+ext:
+  name: 'CopyRef: Copy Reference'
+  desc: 'Copy Markdown Format Web Addresses (as Reference).'
+popup:
+  shortName: 'CopyRef'
+  copy_successful: 'Copy Successful'
+  copied_to_clipboard: 'Copied to Clipboard'
+command:
+  copy: 
+    desc: 'Copy'

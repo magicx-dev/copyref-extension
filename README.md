@@ -37,3 +37,7 @@
 
 Contributions and suggestions are welcome!  
 You can participate by forking the project, submitting issues, or creating pull requests.  
+
+## License
+
+MIT

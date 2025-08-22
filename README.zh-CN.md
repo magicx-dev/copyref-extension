@@ -38,3 +38,7 @@
 ## 开发与贡献
 
 欢迎开发者贡献代码或提出建议。你可以通过 Fork 项目、提交 Issue 或 Pull Request 来参与开发。
+
+## License
+
+MIT

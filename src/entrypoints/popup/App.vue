@@ -14,31 +14,53 @@ const clearInterval = (interval: NodeJS.Timeout) => {
 };
 
 onMounted(async () => {
-  setTimeout(async () => {
-    const currentTab = await getCurrentTab()
-    console.log(currentTab)
-    if (!currentTab) return
+  const currentTab = await getCurrentTab()
+  console.log(currentTab)
+  if (!currentTab) return
 
-    const htmlData = `<a href="${currentTab.url}">${currentTab.title}</a>`;
-    const markdownData = `[${currentTab.title}](${currentTab.url})`;
-    data.value = markdownData
+  let title = currentTab.title
+  let url = currentTab.url
 
-    navigator.clipboard.write([
-      new ClipboardItem({
-        "text/html": new Blob([htmlData], { type: "text/html" }),
-        "text/plain": new Blob([markdownData], { type: "text/plain" })
-      })
-    ]);
-
-    interval = setInterval(() => {
-      countdown.value--
-      if (countdown.value === 0) {
-        window.close()
+  browser.scripting
+    .executeScript({
+      target: {
+        tabId: currentTab.id!,
+      },
+      func: getTitle,
+    })
+    .then(injectionResults => {
+      if (injectionResults.length > 0 && injectionResults[0]?.result) {
+        const { result } = injectionResults[0]
+        title = result.trim()
       }
-    }, 1000)
 
-  }, 1);
+      const htmlData = `<a href="${url}">${title}</a>`
+      const markdownData = `[${title}](${url})`
+      data.value = markdownData
+
+      navigator.clipboard.write([
+        new ClipboardItem({
+          "text/html": new Blob([htmlData], { type: "text/html" }),
+          "text/plain": new Blob([markdownData], { type: "text/plain" })
+        })
+      ]);
+
+      interval = setInterval(() => {
+        countdown.value--
+        if (countdown.value === 0) {
+          window.close()
+        }
+      }, 1000)
+    });
 });
+
+function getTitle() {
+  const selection = window.getSelection();
+  if (selection && selection.rangeCount > 0) {
+    return selection.toString()
+  }
+  return document.title
+}
 </script>
 
 <template>
